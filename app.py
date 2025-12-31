@@ -6,7 +6,7 @@ sys.path.append(str(ROOT_DIR))
 
 
 import streamlit as st
-from projects.file_organiser.organiser import run_app
+from organiser import run_app
 
 st.set_page_config(page_title="My Portfolio", layout="wide")
 
@@ -52,4 +52,5 @@ elif section == "Contact":
     st.header("📫 Contact")
     st.write("📧 Email: your_email@example.com")
     st.write("🐙 GitHub: https://github.com/yourusername")
+
 
