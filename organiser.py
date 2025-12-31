@@ -1,6 +1,12 @@
 from pathlib import Path
-from .config import EXTENSION_MAP, OTHER_FOLDER, DEFAULT_TARGET_DIR
-from .utils import create_folder, move_file
+
+try:
+    from .config import EXTENSION_MAP, OTHER_FOLDER, DEFAULT_TARGET_DIR
+    from .utils import create_folder, move_file
+except ImportError:
+    from config import EXTENSION_MAP, OTHER_FOLDER, DEFAULT_TARGET_DIR
+    from utils import create_folder, move_file
+
 
 def get_destination_folder(file_extension: str) -> str:
     for folder, extensions in EXTENSION_MAP.items():
@@ -54,3 +60,4 @@ def run_app():
 
 if __name__ == "__main__":
     main()
+
